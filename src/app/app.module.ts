@@ -1,20 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UtilsComponent } from './shared/utils/utils.component';
+import { JsonDataService } from './json-data.service';
+import { SecondsToTimePipe } from './shared/seconds-to-time.pipe';
+import { SearchByMovieShowtimePipe } from './shared/search-by-movie-showtime.pipe';
+import { SearchByMovieRatingPipe } from './shared/search-by-movie-rating.pipe';
+import { SearchByMovieNamePipe } from './shared/search-by-movie-name.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UtilsComponent
+    SecondsToTimePipe,
+    SearchByMovieShowtimePipe,
+    SearchByMovieRatingPipe,
+    SearchByMovieNamePipe,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [JsonDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
