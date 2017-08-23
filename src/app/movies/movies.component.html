@@ -1,3 +1,31 @@
-<p>
-  movies works!
-</p>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <form id="filter">
+    <label>Search by name: </label>
+    <input type="text" [(ngModel)]="searchTerm" name="searchTerm"/>
+    <label>Rating</label>
+    <select [(ngModel)]="searchRating" name="searchRating" >
+      <option selected value="">Select one (optional)</option>
+      <option *ngFor="let rating of ratings" value="{{rating.rating}}">"{{rating.rating}} - {{rating.description}}"</option>
+    </select>
+    <button (click)="resetSearch($event)">Reset Search</button>
+  </form>
+  <br>
+  <br>
+
+  <ul *ngIf="(movies | searchByMovieName: searchTerm | searchByMovieRating: searchRating).length < 1">
+    <li>No Movies Match your search Paramenters <button (click)="resetSearch($event)">Reset Search</button></li>
+  </ul>
+  <div class="card" style="width: 30rem; " *ngFor="let movie of movies | searchByMovieName: searchTerm | searchByMovieRating: searchRating">
+    <img class="card-img-top" src="{{movie.poster}}" alt="{{movie.title}}" width="200%">
+    <div class="card-body">
+      <h4 class="card-title" style="font-size: 3rem">{{movie.title}}</h4>
+      <p class="card-text">Rated {{movie.rating}}</p>
+    </div>
+    <br>
+  </div>
+</div>
+
