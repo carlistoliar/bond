@@ -10,6 +10,8 @@ import { SecondsToTimePipe } from './shared/seconds-to-time.pipe';
 import { SearchByMovieShowtimePipe } from './shared/search-by-movie-showtime.pipe';
 import { SearchByMovieRatingPipe } from './shared/search-by-movie-rating.pipe';
 import { SearchByMovieNamePipe } from './shared/search-by-movie-name.pipe';
+import { MoviesComponent } from './movies/movies.component';
+import { ShowtimeComponent } from './showtime/showtime.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { SearchByMovieNamePipe } from './shared/search-by-movie-name.pipe';
     SearchByMovieShowtimePipe,
     SearchByMovieRatingPipe,
     SearchByMovieNamePipe,
+    MoviesComponent,
+    ShowtimeComponent,
   ],
   imports: [
     BrowserModule,
