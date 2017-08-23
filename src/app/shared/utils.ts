@@ -33,7 +33,7 @@ export default class Utils {
   * when displayed.
   * */
 
-  static reformatTheaterData(data) {
+  static reformatShowtimeData(data) {
     const  refData = [];
     let showTimes = [];
     for (let i = 0; i < data.length; i++) {

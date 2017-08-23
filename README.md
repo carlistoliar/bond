@@ -1,5 +1,5 @@
 # bond
-code test for bond
+code test for bond 9am Aug 23
 
 
 Task: create a Movie/Showtime App
@@ -19,7 +19,7 @@ to more easily compare times also create a version of movies that is an object w
 9. load bootstrap and jquery
 10. Make it pretty is there is enough time.
 
-
+11:15 out of time needs most of the styling bootstrap 4 alpha not good idea go with google material design.
 
 # Movie
 

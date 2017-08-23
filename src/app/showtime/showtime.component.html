@@ -1,3 +1,30 @@
-<p>
-  showtime works!
-</p>
+<br>
+<br>
+
+<form>
+  <label>Search by showtime: </label>
+  <input type="text"[(ngModel)]="searchTime" name="searchTime" placeholder="Example 10:30 pm"/>
+  <button (click)="resetSearch(event)">Reset search</button>
+</form>
+
+<div></div>
+<ul *ngFor="let theater of showtime" style="list-style: none">
+  <!--<li>"id: "{{theater.id}}</li>-->
+  <li><h1>{{theater.name}}</h1></li>
+  <li>
+    <div class="media" *ngFor="let movie of theater.movies | searchByMovieShowtime: searchTime">
+      <div class="media-left">
+        <img class="media-object" src="{{movies[movie.movieID].poster}}" alt="..." width="140" style="padding-bottom: 20px; padding-right: 5px;"/>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{movies[movie.movieID].title}}</h4>
+  <li>Show Times
+    <ul style="list-style: none">
+      <li *ngFor="let time of movie.showtimes" [ngClass]="{to_late: currTime > time}" > {{time | secondsToTime}} </li>
+    </ul>
+  </li>
+  </div>
+  </div>
+  </li>
+</ul>
+
