@@ -11,7 +11,7 @@ export class SearchByMovieNamePipe implements PipeTransform {
       return movies;
     }else {
       return movies.filter(function (x) {
-        return x.title.toLocaleLowerCase().includes(searchTerm.toLowerCase());
+        return x.title.toLowerCase().includes(searchTerm.toLowerCase());
       });
     }
   }
